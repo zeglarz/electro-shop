@@ -11,6 +11,7 @@ import {
 const Homepage = (props: any) => {
     return (
         <Home>
+            <h1>Welcome to my Homepage</h1>
             <DirectoryMenu>
                 <MenuItem>
                     <Content>
@@ -18,38 +19,30 @@ const Homepage = (props: any) => {
                         <Subtitle>Shop Now</Subtitle>
                     </Content>
                 </MenuItem>
-                <DirectoryMenu>
-                    <MenuItem>
-                        <Content>
-                            <Title>SNEAKERS</Title>
-                            <Subtitle>Shop Now</Subtitle>
-                        </Content>
-                    </MenuItem>
-                </DirectoryMenu>
-                <DirectoryMenu>
-                    <MenuItem>
-                        <Content>
-                            <Title>HATS</Title>
-                            <Subtitle>Shop Now</Subtitle>
-                        </Content>
-                    </MenuItem>
-                </DirectoryMenu>
-                <DirectoryMenu>
-                    <MenuItem>
-                        <Content>
-                            <Title>JACKETS</Title>
-                            <Subtitle>Shop Now</Subtitle>
-                        </Content>
-                    </MenuItem>
-                </DirectoryMenu>
-                <DirectoryMenu>
-                    <MenuItem>
-                        <Content>
-                            <Title>JACKETS</Title>
-                            <Subtitle>Shop Now</Subtitle>
-                        </Content>
-                    </MenuItem>
-                </DirectoryMenu>
+                <MenuItem>
+                    <Content>
+                        <Title>SNEAKERS</Title>
+                        <Subtitle>Shop Now</Subtitle>
+                    </Content>
+                </MenuItem>
+                <MenuItem>
+                    <Content>
+                        <Title>HATS</Title>
+                        <Subtitle>Shop Now</Subtitle>
+                    </Content>
+                </MenuItem>
+                <MenuItem>
+                    <Content>
+                        <Title>WOMENS</Title>
+                        <Subtitle>Shop Now</Subtitle>
+                    </Content>
+                </MenuItem>
+                <MenuItem>
+                    <Content>
+                        <Title>MENS</Title>
+                        <Subtitle>Shop Now</Subtitle>
+                    </Content>
+                </MenuItem>
             </DirectoryMenu>
         </Home>
     );

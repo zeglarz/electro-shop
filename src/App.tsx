@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from "./components/Homepage";
 
-function App() {
+const App: React.FC = () => {
     return (
         <Homepage>
         </Homepage>
