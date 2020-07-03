@@ -1,5 +1,13 @@
 import styled, {createGlobalStyle} from 'styled-components';
 
+type Custom1 = {
+    imageSrc?: string
+}
+
+type Custom2 = {
+    large?: string
+}
+
 export const Home = styled.div`
     display: flex;
     flex-direction: column;
@@ -14,9 +22,34 @@ export const DirectoryMenu = styled.div`
     justify-content: space-between;
 `;
 
-export const MenuItem = styled.div`
+export const ImageContainer = styled.div<Custom1>`
+    background-image: ${({imageSrc}) => imageSrc ? `url("${imageSrc}")` : 'none'};
+    width:100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &::before {
+    opacity:0;
+   -webkit-transition: opacity 1.2s ease;
+    -moz-transition: opacity 1.2s ease;
+    -ms-transition: opacity 1.2s ease;
+    -o-transition: opacity 1.2s ease;
+    transition:  opacity 2s ease-out;
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(89,102,115,0.75);
+}
+`;
+
+export const MenuItem = styled.div<Custom2>`
     min-width: 30%;
-    height: 240px;
+    height: ${({large}) => large ? '500px' : '300px'};
     display: flex;
     flex: auto;
     align-items: center;
@@ -29,7 +62,21 @@ export const MenuItem = styled.div`
     &:last-child {
     margin-left: 7.5px;
     }
+    &:hover ${ImageContainer},
+    &:focus ${ImageContainer} {
+    transform: scale(1.1);
+    transition: all 1.5s;
+
+    }
+     &:hover ${ImageContainer}::before,
+    &:focus ${ImageContainer}::before {
+        opacity: 1;
+        display: block;
+
+    }
+    overflow: hidden;
 `;
+
 
 export const Content = styled.div`
     height: 90px;
@@ -39,6 +86,8 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
 `;
 
 export const Title = styled.h1`
@@ -51,20 +100,25 @@ export const Title = styled.h1`
 export const Subtitle = styled.span`
     font-weight: lighter;
     font-size: 16px;
+
 `;
 
 export const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  user-select: none;
 }
 `;
