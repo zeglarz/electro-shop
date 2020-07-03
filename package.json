@@ -15,11 +15,12 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.1",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cra-alias start",
+    "build": "cra-alias build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,6 +41,8 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.41",
-    "@types/react-dom": "^16.9.8"
+    "@types/react-dom": "^16.9.8",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "cra-alias": "^4.13.19"
   }
 }
