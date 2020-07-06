@@ -30,12 +30,6 @@ export const ImageContainer = styled.div<Custom1>`
     background-position: center;
     background-size: cover;
     &::before {
-    opacity:0;
-   -webkit-transition: opacity 1.2s ease;
-    -moz-transition: opacity 1.2s ease;
-    -ms-transition: opacity 1.2s ease;
-    -o-transition: opacity 1.2s ease;
-    transition:  opacity 2s ease-out;
     content: "";
     display: none;
     height: 100%;
@@ -43,7 +37,7 @@ export const ImageContainer = styled.div<Custom1>`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(89,102,115,0.75);
+    background-color: rgba(89,102,115,0.1);
 }
 `;
 
@@ -65,14 +59,18 @@ export const MenuItem = styled.div<Custom2>`
     &:hover ${ImageContainer},
     &:focus ${ImageContainer} {
     transform: scale(1.1);
-    transition: all 1.5s;
+    transition: all 1.5s ease-in-out;
 
     }
      &:hover ${ImageContainer}::before,
-    &:focus ${ImageContainer}::before {
-        opacity: 1;
+     &:focus ${ImageContainer}::before {
+        -webkit-transition: background-color 1.2s ease;
+        -moz-transition: background-color 1.2s ease;
+        -ms-transition: background-color 1.2s ease;
+        -o-transition: background-color 1.2s ease;
+        transition:  background-color 1.2s ease;
+        background-color: rgba(89,102,115,0.4);
         display: block;
-
     }
     overflow: hidden;
 `;
@@ -100,7 +98,6 @@ export const Title = styled.h1`
 export const Subtitle = styled.span`
     font-weight: lighter;
     font-size: 16px;
-
 `;
 
 export const GlobalStyle = createGlobalStyle`
