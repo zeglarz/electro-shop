@@ -41,6 +41,20 @@ export const ImageContainer = styled.div<Custom1>`
 }
 `;
 
+
+export const Content = styled.div`
+    height: 90px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+`;
+
+
 export const MenuItem = styled.div<Custom2>`
     min-width: 30%;
     height: ${({large}) => large ? '500px' : '300px'};
@@ -73,20 +87,13 @@ export const MenuItem = styled.div<Custom2>`
         display: block;
     }
     overflow: hidden;
+    
+    &:hover ${Content} {
+    transition: background .5s.1s ease-in-out;
+    background: rgba(255, 255, 255, 1);
+    }
 `;
 
-
-export const Content = styled.div`
-    height: 90px;
-    padding: 0 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    background: rgba(255, 255, 255, 0.6);
-    position: absolute;
-`;
 
 export const Title = styled.h1`
     font-weight: bold;

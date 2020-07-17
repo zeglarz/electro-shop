@@ -5,7 +5,7 @@ import * as S from "@styles";
 interface Sections {
     title: string,
     imageUrl: string,
-    size?: string
+    size?: string,
     id: number,
     linkUrl: string
 }
@@ -50,7 +50,7 @@ const Directory: React.FC = (props) => {
     return (
         <S.DirectoryMenu>
             {sections.map(section => <MenuItem imageSrc={section.imageUrl} key={section.id}
-                                               large={section.size} name={section.title.toUpperCase()}/>)}
+                                               large={section.size} name={section.title} linkUrl={section.linkUrl}/>)}
         </S.DirectoryMenu>);
 }
 
